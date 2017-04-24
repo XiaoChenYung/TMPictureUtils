@@ -10,6 +10,12 @@
 
 static TMPicturesManager* _instance = nil;
 
+@interface TMPicturesManager ()
+
+@property (nonnull ,strong, nonatomic) PHFetchResult *pictureFetchResult;
+
+@end
+
 @implementation TMPicturesManager
 
 + (instancetype)sharePhotoManager {
@@ -20,8 +26,22 @@ static TMPicturesManager* _instance = nil;
     return _instance;
 }
 
-- (void)managerQueryThePHAssetCollectionsFromSmartAlbumsHandleWithCompletion:(void (^)(NSArray<TMAlbum *> *))collectionBlock {
-    
+- (void)queryAlbumCompletion:(void (^)(NSArray<TMAlbum *> *))collectionBlock {
+    //不通过operations  获取正常下的智能相册
+    self.pictureFetchResult= [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
+    if (self.pictureFetchResult) {
+        NSMutableArray <TMAlbum *>* resultArray = [NSMutableArray arrayWithCapacity:self.pictureFetchResult.count];
+        [self.pictureFetchResult enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([obj isKindOfClass:[PHCollection class]]) {
+                PHCollection * collection = (PHCollection *)obj;
+                TMAlbum * album =   [TMAlbum createAlbumWithPhcollection:collection];
+                [resultArray addObject:album];                
+            }
+        }];
+        if (collectionBlock) {
+            collectionBlock(resultArray);
+        };
+    }
 }
 
 @end

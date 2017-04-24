@@ -11,6 +11,8 @@
 
 @interface TMPicturesManager : NSObject
 
-- (void)managerQueryThePHAssetCollectionsFromSmartAlbumsHandleWithCompletion:(void (^)(NSArray <TMAlbum *> * collectionAlbums))collectionBlock;
++ (instancetype)sharePhotoManager;
+
+- (void)queryAlbumCompletion:(void (^)(NSArray <TMAlbum *> * collectionAlbums))collectionBlock;
 
 @end

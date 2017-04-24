@@ -23,4 +23,6 @@
  */
 @property (nonatomic, strong) UIImage * assetImage;
 
++ (instancetype)createAlbumWithPhcollection:(PHCollection *)collection;
+
 @end

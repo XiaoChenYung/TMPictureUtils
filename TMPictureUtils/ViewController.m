@@ -7,9 +7,9 @@
 //
 
 #import "ViewController.h"
-#import <Photos/Photos.h>
+#import "TMPicturesManager.h"
 
-@interface ViewController ()
+@interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic,strong) UITableView  * tableView;
 @property (nonatomic,strong) NSMutableArray    *  resultArray;
@@ -24,14 +24,31 @@
     self.tableView  = ({
         UITableView * table = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
         [table registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cellid"];
-//        table.delegate = self;
-//        table.dataSource = self;
+        table.delegate = self;
+        table.dataSource = self;
         table.rowHeight = 100;
         
         table;
         
     });
     [self.view addSubview:self.tableView];
+    
+    [[TMPicturesManager sharePhotoManager] queryAlbumCompletion:^(NSArray<TMAlbum *> *collectionAlbums) {
+        [self.resultArray addObjectsFromArray:collectionAlbums];
+        [self.tableView reloadData];
+    }];
+    
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.resultArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    TMAlbum *album = self.resultArray[indexPath.row];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellid"];
+    cell.textLabel.text = album.albumName;
+    return cell;
 }
 
 - (void)didReceiveMemoryWarning {
