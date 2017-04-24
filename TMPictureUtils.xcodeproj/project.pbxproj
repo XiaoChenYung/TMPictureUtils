@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9247ABAC1EADF30900728408 /* TMAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 9247ABAB1EADF30900728408 /* TMAlbum.m */; };
+		9247ABAF1EADF34700728408 /* TMasset.m in Sources */ = {isa = PBXBuildFile; fileRef = 9247ABAE1EADF34700728408 /* TMasset.m */; };
+		9247ABB21EADF48000728408 /* TMPicturesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9247ABB11EADF48000728408 /* TMPicturesManager.m */; };
 		9285BD381EAD8F9500E6A4D4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9285BD371EAD8F9500E6A4D4 /* main.m */; };
 		9285BD3B1EAD8F9500E6A4D4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9285BD3A1EAD8F9500E6A4D4 /* AppDelegate.m */; };
 		9285BD3E1EAD8F9500E6A4D4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9285BD3D1EAD8F9500E6A4D4 /* ViewController.m */; };
@@ -16,6 +19,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9247ABAA1EADF30900728408 /* TMAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMAlbum.h; sourceTree = "<group>"; };
+		9247ABAB1EADF30900728408 /* TMAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMAlbum.m; sourceTree = "<group>"; };
+		9247ABAD1EADF34700728408 /* TMasset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMasset.h; sourceTree = "<group>"; };
+		9247ABAE1EADF34700728408 /* TMasset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMasset.m; sourceTree = "<group>"; };
+		9247ABB01EADF48000728408 /* TMPicturesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMPicturesManager.h; sourceTree = "<group>"; };
+		9247ABB11EADF48000728408 /* TMPicturesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMPicturesManager.m; sourceTree = "<group>"; };
 		9285BD331EAD8F9500E6A4D4 /* TMPictureUtils.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMPictureUtils.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9285BD371EAD8F9500E6A4D4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9285BD391EAD8F9500E6A4D4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -39,6 +48,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9247ABA91EADF2DE00728408 /* TMPictureUtils */ = {
+			isa = PBXGroup;
+			children = (
+				9247ABAA1EADF30900728408 /* TMAlbum.h */,
+				9247ABAB1EADF30900728408 /* TMAlbum.m */,
+				9247ABAD1EADF34700728408 /* TMasset.h */,
+				9247ABAE1EADF34700728408 /* TMasset.m */,
+				9247ABB01EADF48000728408 /* TMPicturesManager.h */,
+				9247ABB11EADF48000728408 /* TMPicturesManager.m */,
+			);
+			path = TMPictureUtils;
+			sourceTree = "<group>";
+		};
 		9285BD2A1EAD8F9400E6A4D4 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +80,7 @@
 		9285BD351EAD8F9500E6A4D4 /* TMPictureUtils */ = {
 			isa = PBXGroup;
 			children = (
+				9247ABA91EADF2DE00728408 /* TMPictureUtils */,
 				9285BD391EAD8F9500E6A4D4 /* AppDelegate.h */,
 				9285BD3A1EAD8F9500E6A4D4 /* AppDelegate.m */,
 				9285BD3C1EAD8F9500E6A4D4 /* ViewController.h */,
@@ -152,7 +175,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9285BD3E1EAD8F9500E6A4D4 /* ViewController.m in Sources */,
+				9247ABAF1EADF34700728408 /* TMasset.m in Sources */,
 				9285BD3B1EAD8F9500E6A4D4 /* AppDelegate.m in Sources */,
+				9247ABB21EADF48000728408 /* TMPicturesManager.m in Sources */,
+				9247ABAC1EADF30900728408 /* TMAlbum.m in Sources */,
 				9285BD381EAD8F9500E6A4D4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
